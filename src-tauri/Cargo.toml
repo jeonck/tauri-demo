@@ -1,0 +1,26 @@
+[package]
+name = "tauri-demo-app"
+version = "0.1.0"
+description = "Tauri의 강점을 보여주는 데모 앱"
+authors = ["Claude Assistant"]
+license = "MIT"
+repository = ""
+default-run = "tauri-demo-app"
+edition = "2021"
+rust-version = "1.60"
+
+[build-dependencies]
+tauri-build = { version = "1.5.0", features = [] }
+
+[dependencies]
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+tauri = { version = "1.5.4", features = [ "path-all", "window-unminimize", "window-start-dragging", "window-show", "window-set-icon", "window-set-cursor-icon", "window-center", "window-set-title", "window-maximize", "window-set-cursor-visible", "window-create", "window-hide", "window-set-max-size", "process-relaunch", "window-set-position", "window-set-cursor-grab", "window-request-user-attention", "os-all", "fs-all", "notification-all", "shell-open", "window-set-skip-taskbar", "window-set-size", "window-set-resizable", "window-set-min-size", "clipboard-all", "window-set-ignore-cursor-events", "window-set-fullscreen", "window-set-focus", "window-close", "window-set-cursor-position", "dialog-all", "window-minimize", "window-unmaximize", "global-shortcut-all", "process-exit"] }
+tokio = { version = "1.0", features = ["full"] }
+reqwest = { version = "0.11", features = ["json"] }
+uuid = { version = "1.0", features = ["v4", "serde"] }
+chrono = { version = "0.4", features = ["serde"] }
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]
